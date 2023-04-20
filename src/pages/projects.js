@@ -6,7 +6,7 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Project() {
     const [contactOpen, setContactOpen] = useState(false);
     const [subject, setSubject] = useState();
     const [message, setMessage] = useState();
@@ -43,176 +43,9 @@ export default function Home() {
                     </ul>
                 </nav>
             </header>
-            <main className="flex min-h-screen flex-col py-24">
-                <div className="mx-auto">
-                    <h2 className="mb-2 text-lg font-semibold -translate-x-8 inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
-                        WEB DEVELOPER
-                    </h2>
-                    <h1 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400">
-                        <span className="hover:text-blue-500 transition duration-300">
-                            R
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            o
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            b
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            i
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            n
-                        </span>
-                        &nbsp;
-                        <br className="sm:hidden"></br>
-                        <span className="hover:text-blue-500 transition duration-300"></span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            B
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            e
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            r
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            g
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            s
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            t
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            r
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            a
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            n
-                        </span>
-                        <span className="hover:text-blue-500 transition duration-300">
-                            d
-                        </span>
-                    </h1>
-                </div>
-                <div className="max-w-4xl mx-auto mt-16">
-                    <p className="mb-4 text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Nam libero justo laoreet sit amet cursus
-                        sit. Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Nam libero justo laoreet sit amet
-                        cursus sit. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Nam libero justo laoreet
-                        sit amet cursus sit.
-                    </p>
-                </div>
-                {/* <section className="flex flex-col md:flex-row mt-10">
-                    <div className="flex mx-auto flex-col md:w-7/12 items-start gap-2 mt-20">
-                        <h2>Web Developer</h2>
-                        <h1 className="text-5xl mb-4">Robin Bergstrand</h1>
-                        <p className="mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Nam libero justo laoreet sit
-                            amet cursus sit. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Nam
-                            libero justo laoreet sit amet cursus sit.
-                        </p>
-                        <button className="bg-blue-700 py-2 px-4 rounded-lg text-white hover:bg-blue-800">
-                            Contact me
-                        </button>
-                    </div>
-                    <div className="flex justify-center">
-                        <Image width="500" height="300" src="/hero.svg"></Image>
-                    </div>
-                </section> */}
-                <section className="mt-40">
-                    <h2 className="text-4xl mb-10">Tools I've worked with</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 justify-between font-semibold">
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/js.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">JavaScript</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/react.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">React</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/tailwind.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">Tailwind</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/git.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">Git</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/redux.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">Redux</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/mysql.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">MySQL</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="100"
-                                height="100"
-                                src={"/html.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">HTML</h3>
-                        </div>
-                        <div className="basis-[100px]">
-                            <Image
-                                width="72"
-                                height="72"
-                                src={"/css.svg"}
-                                className="h-[100px] mx-auto"
-                            ></Image>
-                            <h3 className="text-center mt-2">CSS</h3>
-                        </div>
-                    </div>
-                </section>
+            <main className="flex min-h-screen flex-col py-12">
                 <section className="flex flex-col">
-                    <h2 className="text-4xl mb-10 mt-36">Projects</h2>
+                    <h2 className="text-4xl mb-10 text-center">Projects</h2>
                     <div className="md:flex gap-8">
                         <div className="md:w-1/2 mb-8 md:mb-0 rounded-md overflow-hidden drop-shadow-2xl flex flex-col">
                             <Image
@@ -304,11 +137,9 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-blue-700 py-2 px-4 rounded-lg text-white self-end mt-8 hover:bg-blue-800">
-                        More projects
-                    </button>
                 </section>
-                <section className="mt-16 flex flex-col sm:items-center">
+
+                <section className="mt-32 flex flex-col sm:items-center">
                     <h2 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400 text-center">
                         Reach out to me!
                     </h2>
