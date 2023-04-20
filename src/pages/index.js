@@ -1,12 +1,23 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+    const [contactOpen, setContactOpen] = useState(false);
+    const [subject, setSubject] = useState();
+    const [message, setMessage] = useState();
+
+    /* if (contactOpen) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "scroll";
+    } */
+
     return (
-        <div className="max-w-7xl px-24 mx-auto ">
+        <div className={`max-w-7xl px-12 md:px-24 mx-auto ${inter.className}`}>
             <header className="border-b-2 border-gray-300">
                 <nav>
                     <ul className="flex h-20 items-center text-lg font-semibold">
@@ -17,7 +28,10 @@ export default function Home() {
                             <Link href={"/"}>Projects</Link>
                         </li>
                         <li>
-                            <button className="bg-blue-700 py-2 px-4 rounded-lg text-white">
+                            <button
+                                className="bg-blue-700 py-2 px-4 rounded-lg text-white hover:bg-blue-800"
+                                onClick={() => setContactOpen(true)}
+                            >
                                 Contact
                             </button>
                         </li>
@@ -25,8 +39,76 @@ export default function Home() {
                 </nav>
             </header>
             <main className="flex min-h-screen flex-col py-24">
-                <section className="flex mt-10">
-                    <div className="flex flex-col w-7/12 items-start gap-2 mt-20">
+                <div className="mx-auto">
+                    <h2 className="mb-2 text-lg font-semibold -translate-x-8 inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
+                        WEB DEVELOPER
+                    </h2>
+                    <h1 className="text-8xl mb-4 text-slate-400">
+                        <span className="hover:text-blue-500 transition duration-300">
+                            R
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            o
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            b
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            i
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            n
+                        </span>
+                        &nbsp;
+                        <span className="hover:text-blue-500 transition duration-300"></span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            B
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            e
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            r
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            g
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            s
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            t
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            r
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            a
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            n
+                        </span>
+                        <span className="hover:text-blue-500 transition duration-300">
+                            d
+                        </span>
+                    </h1>
+                </div>
+                <div className="max-w-4xl mx-auto mt-16">
+                    <p className="mb-4 text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Nam libero justo laoreet sit amet cursus
+                        sit. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Nam libero justo laoreet sit amet
+                        cursus sit. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Nam libero justo laoreet
+                        sit amet cursus sit.
+                    </p>
+                </div>
+                {/* <section className="flex flex-col md:flex-row mt-10">
+                    <div className="flex mx-auto flex-col md:w-7/12 items-start gap-2 mt-20">
                         <h2>Web Developer</h2>
                         <h1 className="text-5xl mb-4">Robin Bergstrand</h1>
                         <p className="mb-4">
@@ -38,86 +120,86 @@ export default function Home() {
                             incididunt ut labore et dolore magna aliqua. Nam
                             libero justo laoreet sit amet cursus sit.
                         </p>
-                        <button className="bg-blue-700 py-2 px-4 rounded-lg text-white">
+                        <button className="bg-blue-700 py-2 px-4 rounded-lg text-white hover:bg-blue-800">
                             Contact me
                         </button>
                     </div>
-                    <div>
+                    <div className="flex justify-center">
                         <Image width="500" height="300" src="/hero.svg"></Image>
                     </div>
-                </section>
+                </section> */}
                 <section className="mt-40">
-                    <h2 className="text-4xl mb-10">Skills</h2>
-                    <div className="flex gap-10 justify-between font-semibold">
-                        <div>
+                    <h2 className="text-4xl mb-10">Tools I've worked with</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 justify-between font-semibold">
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
-                                src={"/js.bmp"}
-                                className="h-[100px]"
+                                src={"/js.svg"}
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">JavaScript</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
                                 src={"/react.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">React</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
                                 src={"/tailwind.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">Tailwind</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
                                 src={"/git.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">Git</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
                                 src={"/redux.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">Redux</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
                                 src={"/mysql.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">MySQL</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="100"
                                 height="100"
                                 src={"/html.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">HTML</h3>
                         </div>
-                        <div>
+                        <div className="basis-[100px]">
                             <Image
                                 width="72"
                                 height="72"
                                 src={"/css.svg"}
-                                className="h-[100px]"
+                                className="h-[100px] mx-auto"
                             ></Image>
                             <h3 className="text-center mt-2">CSS</h3>
                         </div>
@@ -125,8 +207,8 @@ export default function Home() {
                 </section>
                 <section className="flex flex-col">
                     <h2 className="text-4xl mb-10 mt-36">Projects</h2>
-                    <div className="flex gap-8">
-                        <div className="w-1/2 rounded-md overflow-hidden drop-shadow-2xl flex flex-col">
+                    <div className="md:flex gap-8">
+                        <div className="md:w-1/2 mb-8 md:mb-0 rounded-md overflow-hidden drop-shadow-2xl flex flex-col">
                             <Image
                                 className="h-96 object-cover object-center"
                                 src={"/wordle.png"}
@@ -169,7 +251,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-1/2 rounded-md overflow-hidden drop-shadow-2xl  flex flex-col">
+                        <div className="md:w-1/2  rounded-md overflow-hidden drop-shadow-2xl  flex flex-col">
                             <Image
                                 className="h-96 object-cover object-left"
                                 src={"/quiz.png"}
@@ -200,21 +282,67 @@ export default function Home() {
                                     sit.
                                 </p>
                                 <div className="flex gap-4">
-                                    <button className="bg-blue-700 py-2 px-4 rounded-lg text-white ml-auto">
+                                    <a className="bg-blue-700 py-2 px-4 rounded-lg text-white ml-auto hover:bg-blue-800">
                                         Github
-                                    </button>
-                                    <button className="bg-blue-700 py-2 px-4 rounded-lg text-white">
+                                    </a>
+                                    <a className="bg-blue-700 py-2 px-4 rounded-lg text-white hover:bg-blue-800">
                                         View live
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button className="bg-blue-700 py-2 px-4 rounded-lg text-white self-end mt-8">
+                    <button className="bg-blue-700 py-2 px-4 rounded-lg text-white self-end mt-8 hover:bg-blue-800">
                         More projects
                     </button>
                 </section>
             </main>
+            {contactOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center">
+                    <div
+                        className="absolute inset-0"
+                        onClick={() => setContactOpen(false)}
+                    ></div>
+                    <div className="bg-gradient-to-b from-gray-300 to-gray-200 w-[600px] h-[500px] rounded-2xl p-12 z-10">
+                        <form
+                            className="flex flex-col gap-2 h-full"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                setSubject("");
+                                setMessage("");
+                                setContactOpen(false);
+                            }}
+                        >
+                            <label for="subject">Subject</label>
+                            <input
+                                type="text"
+                                name="subject"
+                                id="subject"
+                                className="p-2 rounded-md"
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)}
+                                required
+                            ></input>
+                            <label for="message">Message</label>
+                            <textarea
+                                type="text"
+                                name="message"
+                                id="message"
+                                className="p-2 rounded-md resize-none grow"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            ></textarea>
+                            <button
+                                type="submit"
+                                className="px-4 py-2 rounded-lg border-2 border-blue-400 self-end hover:bg-blue-400 hover:border-blue-500"
+                            >
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
