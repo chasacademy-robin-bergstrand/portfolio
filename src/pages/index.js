@@ -304,9 +304,12 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-blue-700 py-2 px-4 rounded-lg text-white self-end mt-8 hover:bg-blue-800">
+                    <Link
+                        href={"/projects"}
+                        className="bg-blue-700 py-2 px-4 rounded-lg text-white self-end mt-8 hover:bg-blue-800"
+                    >
                         More projects
-                    </button>
+                    </Link>
                 </section>
                 <section className="mt-16 flex flex-col sm:items-center">
                     <h2 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400 text-center">
