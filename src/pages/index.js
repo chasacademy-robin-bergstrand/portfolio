@@ -43,7 +43,7 @@ export default function Home() {
                     <h2 className="mb-2 text-lg font-semibold -translate-x-8 inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
                         WEB DEVELOPER
                     </h2>
-                    <h1 className="text-8xl mb-4 text-slate-400">
+                    <h1 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400">
                         <span className="hover:text-blue-500 transition duration-300">
                             R
                         </span>
@@ -60,6 +60,7 @@ export default function Home() {
                             n
                         </span>
                         &nbsp;
+                        <br className="sm:hidden"></br>
                         <span className="hover:text-blue-500 transition duration-300"></span>
                         <span className="hover:text-blue-500 transition duration-300">
                             B
