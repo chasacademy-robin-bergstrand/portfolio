@@ -11,12 +11,6 @@ export default function Home() {
     const [subject, setSubject] = useState();
     const [message, setMessage] = useState();
 
-    /* if (contactOpen) {
-        document.body.style.overflow = "hidden";
-    } else {
-        document.body.style.overflow = "scroll";
-    } */
-
     return (
         <div className={`max-w-7xl px-12 md:px-24 mx-auto ${inter.className}`}>
             <header className="border-b-2 border-gray-300">
