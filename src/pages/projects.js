@@ -253,7 +253,7 @@ export default function Project() {
                     <a href="https://github.com/chasacademy-robin-bergstrand">
                         <BsGithub />
                     </a>
-                    <a>
+                    <a className="hover:text-blue-400" href="#">
                         <BsLinkedin />
                     </a>
                 </div>

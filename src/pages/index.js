@@ -369,7 +369,7 @@ export default function Home() {
                     >
                         <BsGithub />
                     </a>
-                    <a className="hover:text-blue-400">
+                    <a className="hover:text-blue-400" href="#">
                         <BsLinkedin />
                     </a>
                 </div>
