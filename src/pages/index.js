@@ -8,8 +8,22 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
-  const [subject, setSubject] = useState();
-  const [message, setMessage] = useState();
+  const [contactSubject, setContactSubject] = useState();
+  const [contactMessage, setContactMessage] = useState();
+  const [contactName, setContactName] = useState();
+  const [contactEmail, setContactEmail] = useState();
+
+  async function handleSendEmail() {
+    let response = await fetch('api/email', {
+      body: JSON.stringify({
+        name: contactName,
+        email: contactEmail,
+        subject: contactSubject,
+        message: contactMessage,
+      }),
+      method: 'POST',
+    });
+  }
 
   return (
     <div className={`max-w-7xl px-12 md:px-24 mx-auto ${inter.className}`}>
@@ -26,13 +40,23 @@ export default function Home() {
                 Projects
               </Link>
             </li>
+            <li className=' mr-16'>
+              <Link
+                href={'/CV.pdf'}
+                target='_blank'
+                rel='noopener noreferer'
+                className='p-4 hover:text-blue-400'
+              >
+                CV
+              </Link>
+            </li>
             <li>
-              <button
-                className='bg-blue-400 py-2 px-4 rounded-lg text-white hover:bg-blue-500'
-                onClick={() => setContactOpen(true)}
+              <a
+                className='bg-blue-400 py-3 px-4 rounded-lg text-white hover:bg-blue-500'
+                href='mailto:robin.bergstrand@gmail.com'
               >
                 Contact
-              </button>
+              </a>
             </li>
           </ul>
         </nav>
@@ -43,52 +67,52 @@ export default function Home() {
             WEB DEVELOPER
           </h2>
           <h1 className='text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400 '>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               R
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               o
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               b
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               i
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               n
             </span>
             &nbsp;
             <br className='sm:hidden'></br>
-            <span className='hover:text-blue-500 transition duration-300'></span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'></span>
+            <span className='hover:text-blue-400 transition duration-300'>
               B
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               e
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               r
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               g
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               s
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               t
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               r
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               a
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               n
             </span>
-            <span className='hover:text-blue-500 transition duration-300'>
+            <span className='hover:text-blue-400 transition duration-300'>
               d
             </span>
           </h1>
@@ -323,15 +347,16 @@ export default function Home() {
           <h2 className='text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400 text-center'>
             Reach out to me!
           </h2>
-          <button
+          <a
             className='bg-blue-400 text-xl font-semibold py-2 px-4 rounded-lg text-white mt-8 hover:bg-blue-500'
-            onClick={() => setContactOpen(true)}
+            href='mailto:robin.bergstrand@gmail.com'
           >
             Contact
-          </button>
+          </a>
+          <div className='text-slate-400 pt-4'>robin.bergstrand@gmail.com</div>
         </section>
       </main>
-      {contactOpen && (
+      {/* {contactOpen && (
         <div className='fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center'>
           <div
             className='absolute inset-0'
@@ -339,38 +364,80 @@ export default function Home() {
           ></div>
           <div className='bg-gradient-to-b from-gray-300 to-gray-200 w-[600px] h-[500px] rounded-2xl p-8 z-10'>
             <form
-              className='flex flex-col gap-2 h-full'
+              className='flex flex-col gap-4 h-full'
               onSubmit={(e) => {
                 e.preventDefault();
-                setSubject('');
-                setMessage('');
+                setContactSubject('');
+                setContactMessage('');
+                setContactEmail('');
+                setContactName('');
                 setContactOpen(false);
+
+                handleSendEmail();
               }}
             >
-              <label for='subject' className='font-bold'>
-                Subject
-              </label>
+              
+              
+          
+              <input
+                type='text'
+                name='name'
+                id='name'
+                placeholder='Your name'
+                className='p-2 rounded-md bg-opacity-70 bg-white'
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                required
+              ></input>
+              <input
+                type='text'
+                name='email'
+                id='email'
+                placeholder='Your Email'
+                className='p-2 rounded-md bg-opacity-70 bg-white'
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
+                required
+              ></input>
               <input
                 type='text'
                 name='subject'
                 id='subject'
-                className='p-2 rounded-md'
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
+                placeholder='Subject'
+                className='p-2 rounded-md bg-opacity-70 bg-white'
+                value={contactSubject}
+                onChange={(e) => setContactSubject(e.target.value)}
                 required
               ></input>
-              <label for='message' className='font-bold'>
-                Message
-              </label>
+        
               <textarea
                 type='text'
                 name='message'
                 id='message'
-                className='p-2 rounded-md resize-none grow'
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Tell me what's on your mind!"
+                className='p-2 rounded-md resize-none grow bg-opacity-70 bg-white'
+                value={contactMessage}
+                onChange={(e) => setContactMessage(e.target.value)}
                 required
               ></textarea>
+              <div>
+                Or Email me directly at{' '}
+                <a
+                  href='mailto:Robin.Bergstrand@gmail.com'
+                  className=' text-blue-400 hover:text-blue-600'
+                >
+                  robin.bergstrand@gmail.com
+                </a>
+              </div>
+              <div>
+                Or Email me directly at{' '}
+                <a
+                  href='mailto:Robin.Bergstrand@gmail.com'
+                  className=' text-blue-400 hover:text-blue-600'
+                >
+                  contact@robinbergstrand.com
+                </a>
+              </div>
               <button
                 type='submit'
                 className='px-4 py-2 rounded-lg border-2 border-blue-400 self-end text-blue-400 hover:text-white hover:bg-blue-400 hover:border-blue-400'
@@ -380,7 +447,7 @@ export default function Home() {
             </form>
           </div>
         </div>
-      )}
+      )} */}
       <footer className='border-t-2 border-gray-200 h-36 flex justify-center items-center'>
         <div className='text-4xl text-gray-400 flex gap-6'>
           <a
