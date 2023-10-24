@@ -6,11 +6,6 @@ import { env } from '../../../next.config';
 export default async function handler(req, res) {
   const body = JSON.parse(req.body);
 
-  /*  let API_KEY = '41afc593a58aef91931d02707f19f9ee-3750a53b-40de1768';
-  let DOMAIN = 'sandbox4c30810c360f4e93a90d07a63711b4fa.mailgun.org';
-
-  const mailgun = Mailgun({ apiKey: API_KEY, domain: DOMAIN }); */
-
   let API_KEY = process.env.API_KEY;
   let DOMAIN = process.env.DOMAIN;
 
