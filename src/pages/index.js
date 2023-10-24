@@ -26,33 +26,38 @@ export default function Home() {
   }
 
   return (
-    <div className={`max-w-7xl px-12 md:px-24 mx-auto ${inter.className}`}>
+    <div
+      className={`max-w-7xl px-6 sm:px-12 md:px-24 mx-auto ${inter.className}`}
+    >
       <header className='border-b-2 border-gray-300'>
         <nav>
           <ul className='flex h-20 items-center text-xl font-semibold'>
             <li>
-              <Link href={'/'} className='p-4 hover:text-blue-400'>
+              <Link href={'/'} className='p-2 md:p-4 hover:text-blue-400'>
                 Home
               </Link>
             </li>
-            <li className='ml-auto sm:mr-16'>
-              <Link href={'/projects'} className='p-4 hover:text-blue-400'>
+            <li className='ml-auto lg:mr-16'>
+              <Link
+                href={'/projects'}
+                className='p-2 md:p-4 hover:text-blue-400'
+              >
                 Projects
               </Link>
             </li>
-            <li className=' mr-16'>
+            <li className=' lg:mr-16'>
               <Link
                 href={'/CV.pdf'}
                 target='_blank'
                 rel='noopener noreferer'
-                className='p-4 hover:text-blue-400'
+                className='p-2 md:p-4 hover:text-blue-400'
               >
                 CV
               </Link>
             </li>
             <li>
               <a
-                className='bg-blue-400 py-3 px-4 rounded-lg text-white hover:bg-blue-500'
+                className='bg-blue-400 py-2 px-3 sm:py-3 sm:px-4 rounded-lg text-white hover:bg-blue-500'
                 href='mailto:robin.bergstrand@gmail.com'
               >
                 Contact
@@ -63,7 +68,7 @@ export default function Home() {
       </header>
       <main className='flex min-h-screen flex-col py-24'>
         <div className='mx-auto'>
-          <h2 className='mb-2 text-lg font-semibold -translate-x-8 inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600'>
+          <h2 className='mb-2 text-lg font-semibold -translate-x-4 sm:-translate-x-8 inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600'>
             WEB DEVELOPER
           </h2>
           <h1 className='text-6xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 text-slate-400 '>
@@ -133,7 +138,9 @@ export default function Home() {
         </div>
 
         <section className='mt-40'>
-          <h2 className='text-4xl mb-10'>Tools I've worked with</h2>
+          <h2 className='text-4xl mb-10 text-center sm:text-left'>
+            Tools I've worked with
+          </h2>
           <div className='grid grid-cols-2 md:grid-cols-4 gap-10 justify-between font-semibold'>
             <div className='basis-[100px]'>
               <Image
@@ -248,7 +255,9 @@ export default function Home() {
           </div>
         </section>
         <section className='flex flex-col'>
-          <h2 className='text-4xl mb-10 mt-36'>Projects</h2>
+          <h2 className='text-4xl mb-10 mt-36  text-center sm:text-left'>
+            Projects
+          </h2>
           <div className='md:flex gap-8'>
             <div className='md:w-1/2 mb-8 md:mb-0 rounded-md overflow-hidden drop-shadow-2xl flex flex-col'>
               <Image
@@ -348,12 +357,14 @@ export default function Home() {
             Reach out to me!
           </h2>
           <a
-            className='bg-blue-400 text-xl font-semibold py-2 px-4 rounded-lg text-white mt-8 hover:bg-blue-500'
+            className='bg-blue-400 text-xl font-semibold py-2 px-4 rounded-lg text-white mt-8 hover:bg-blue-500 text-center'
             href='mailto:robin.bergstrand@gmail.com'
           >
             Contact
           </a>
-          <div className='text-slate-400 pt-4'>robin.bergstrand@gmail.com</div>
+          <div className='text-slate-400 pt-4 text-center'>
+            robin.bergstrand@gmail.com
+          </div>
         </section>
       </main>
       {/* {contactOpen && (
@@ -456,7 +467,10 @@ export default function Home() {
           >
             <BsGithub />
           </a>
-          <a className='hover:text-blue-400' href='#'>
+          <a
+            className='hover:text-blue-400'
+            href='https://www.linkedin.com/in/robin-bergstrand-a36337155/'
+          >
             <BsLinkedin />
           </a>
         </div>

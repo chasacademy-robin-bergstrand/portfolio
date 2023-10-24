@@ -12,33 +12,38 @@ export default function Project() {
   const [message, setMessage] = useState();
 
   return (
-    <div className={`max-w-7xl px-12 md:px-24 mx-auto ${inter.className}`}>
+    <div
+      className={`max-w-7xl px-6 sm:px-12 md:px-24 mx-auto ${inter.className}`}
+    >
       <header className='border-b-2 border-gray-300'>
         <nav>
           <ul className='flex h-20 items-center text-xl font-semibold'>
             <li>
-              <Link href={'/'} className='p-4 hover:text-blue-400'>
+              <Link href={'/'} className='p-2 md:p-4 hover:text-blue-400'>
                 Home
               </Link>
             </li>
-            <li className='ml-auto mr-16'>
-              <Link href={'/projects'} className='p-4 hover:text-blue-400'>
+            <li className='ml-auto lg:mr-16'>
+              <Link
+                href={'/projects'}
+                className='p-2 md:p-4 hover:text-blue-400'
+              >
                 Projects
               </Link>
             </li>
-            <li className=' mr-16'>
+            <li className=' lg:mr-16'>
               <Link
                 href={'/CV.pdf'}
                 target='_blank'
                 rel='noopener noreferer'
-                className='p-4 hover:text-blue-400'
+                className='p-2 md:p-4 hover:text-blue-400'
               >
                 CV
               </Link>
             </li>
             <li>
               <a
-                className='bg-blue-400 py-3 px-4 rounded-lg text-white hover:bg-blue-500'
+                className='bg-blue-400 py-2 px-3 sm:py-3 sm:px-4 rounded-lg text-white hover:bg-blue-500'
                 href='mailto:robin.bergstrand@gmail.com'
               >
                 Contact
@@ -185,12 +190,14 @@ export default function Project() {
             Reach out to me!
           </h2>
           <a
-            className='bg-blue-400 text-xl font-semibold py-2 px-4 rounded-lg text-white mt-8 hover:bg-blue-500'
+            className='bg-blue-400 text-xl font-semibold py-2 px-4 rounded-lg text-white mt-8 hover:bg-blue-500 text-center'
             href='mailto:robin.bergstrand@gmail.com'
           >
             Contact
           </a>
-          <div className='text-slate-400 pt-4'>robin.bergstrand@gmail.com</div>
+          <div className='text-slate-400 pt-4 text-center'>
+            robin.bergstrand@gmail.com
+          </div>
         </section>
       </main>
       {/* {contactOpen && (
