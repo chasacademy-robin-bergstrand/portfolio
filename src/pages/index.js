@@ -125,15 +125,25 @@ export default function Home() {
         <div className='max-w-4xl mx-auto mt-16'>
           <p className='mb-4 text-center'>
             Currently studying{' '}
-            <span className='text-blue-400'>Frontend Web Development</span> at
-            Chas Academy, Stockholm. <br /> Looking for an internship for 24
-            weeks from <span className='text-blue-400'>November</span> forward.
+            <span className='text-blue-400  text-lg'>
+              Frontend Web Development
+            </span>{' '}
+            at Chas Academy, Stockholm. <br /> Looking for{' '}
+            <span className='text-blue-400  text-lg'>
+              new interesting opportunities
+            </span>{' '}
+            moving forward after graduating in{' '}
+            <span className='text-blue-400  text-lg'>June</span>.
           </p>
-          <p className='text-center'>
+          <p className='mb-4 text-center'>
             I have always had a large interest for tech ever since I was young
             and enjoy learning new technologies and tools.
-            <br />I Shouldn't have any issues learning whatever is needed for a
+            <br />I shouldn't have any issues learning whatever is needed for a
             specific job.
+          </p>
+          <p className='text-center'>
+            <span className='text-blue-400  text-lg'>Reach out</span> to me if
+            you have something which may be up my alley!
           </p>
         </div>
 
@@ -251,6 +261,26 @@ export default function Home() {
               ></Image>
 
               <h3 className='text-center mt-2'>Next.js</h3>
+            </div>
+            <div className='basis-[100px]'>
+              <Image
+                width='100'
+                height='100'
+                src={'/sass.png'}
+                className='h-[100px] mx-auto'
+              ></Image>
+
+              <h3 className='text-center mt-2'>Sass</h3>
+            </div>
+            <div className='basis-[100px]'>
+              <Image
+                width='100'
+                height='100'
+                src={'/python.png'}
+                className='h-[100px] mx-auto'
+              ></Image>
+
+              <h3 className='text-center mt-2'>Python</h3>
             </div>
           </div>
         </section>
